@@ -42,7 +42,7 @@ function TodoHead() {
     <TodoHeadBlock>
       <h2>{dateString}</h2>
       <div className="day">{dayName}</div>
-      <div className="tasks-left">앞으로 해야할 일: {undoneTasks.length}개 남음</div>
+      <div className="tasks-left">앞으로 할 일: {undoneTasks.length}개 남음</div>
     </TodoHeadBlock>
   );
 }
