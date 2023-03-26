@@ -16,8 +16,7 @@ function App() {
   return (
     <TodoProvider>
       
-      <GlobalStyle />
-        
+       <GlobalStyle /> 
         {/* 브라우저 전체 바탕화면 영역입니다 */}
         <TodoTemplate>
           <TodoHead/>

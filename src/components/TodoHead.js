@@ -3,19 +3,21 @@ import styled from 'styled-components';
 import { useTodoState } from '../TodoContext';
 
 const TodoHeadBlock = styled.div`
+  background:beige;
   padding-top: 48px;
   padding-left: 32px;
   padding-right: 32px;
   padding-bottom: 24px;
   border-bottom: 1px solid #e9ecef;
+
   h1 {
     margin: 0;
     font-size: 36px;
     color: #343a40;
   }
-  .day {
+  .cWeek {
     margin-top: 4px;
-    color: #868e96;
+    color: #FF0000;
     font-size: 21px;
   }
   .tasks-left {
@@ -29,19 +31,24 @@ const TodoHeadBlock = styled.div`
 function TodoHead() {
   const todos = useTodoState();
   const undoneTasks = todos.filter(todo => !todo.done);
+  console.log(undoneTasks);
 
   const today = new Date();
-  const dateString = today.toLocaleDateString('ko-KR', {
-    year: 'numeric',
-    month: 'long',
-    day: 'numeric'
-  });
-  const dayName = today.toLocaleDateString('ko-KR', { weekday: 'long' });
+  // console.log(today); // Sun Mar 26 2023 06:09:02 GMT+0900 (GMT+09:00)
+  // console.log(today.toLocaleDateString('ko-KR')); // 2023. 3. 26.
+  // console.log(today.toLocaleDateString('en-US')); // 3/26/2023
+  // console.log(today.toLocaleDateString('ko-KR', { month: 'long'})); //3월
+
+  const dateString = today.toLocaleDateString(
+      'ko-KR' 
+      ,{ year: 'numeric', month: 'long', day: 'numeric'}
+    );
+  const week = today.toLocaleDateString('en-US', { weekday: 'long' });
 
   return (
     <TodoHeadBlock>
       <h2>{dateString}</h2>
-      <div className="day">{dayName}</div>
+      <div className="cWeek">{week}</div>
       <div className="tasks-left">앞으로 할 일: {undoneTasks.length}개 남음</div>
     </TodoHeadBlock>
   );

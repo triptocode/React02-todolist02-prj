@@ -14,7 +14,7 @@ const CheckCircle = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-right: 20px;
+  margin-right: 20px; 
   cursor: pointer;
   ${props =>
     props.done &&
@@ -29,7 +29,7 @@ const Remove = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #dee2e6;
+  color: #dee2e6; 
   font-size: 24px;
   cursor: pointer;
   &:hover {
