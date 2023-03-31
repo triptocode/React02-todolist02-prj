@@ -42,7 +42,7 @@ const TodoStateContext = createContext();
 const TodoDispatchContext = createContext();
 const TodoNextIdContext = createContext();
 
-export function TodoProvider({ children }) {
+export function TodoProvider({ children }) { // App.js <TodoProvider> 태그안에 자식태그들
   const [state, dispatch] = useReducer(todoReducer, initialTodos);
   const nextId = useRef(5);
 
@@ -57,9 +57,10 @@ export function TodoProvider({ children }) {
   );
 }
 
-export function useTodoState() {
+export  function useTodoState() {
   return useContext(TodoStateContext);
 }
+
 
 export function useTodoDispatch() {
   return useContext(TodoDispatchContext);

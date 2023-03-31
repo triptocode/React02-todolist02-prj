@@ -112,6 +112,9 @@ function TodoCreate() {
 
   return (
     <>
+    {/* open이 true일때는 생성버튼클릭할때!. 
+    그래야 초롤버튼클릭시 연결함수 onToggle로 open초기값false가 true가 됨 
+     그때 InsertForm 그레이 컬러 input창 배경이 나타남*/}
       {open && (
         <InsertFormPositioner>
           <InsertForm onSubmit={onSubmit}>
@@ -124,7 +127,9 @@ function TodoCreate() {
           </InsertForm>
         </InsertFormPositioner>
       )}
-      <CircleButton onClick={onToggle} open={open}>
+  {/* onToggle은 open반전함수 open초기값이 false->true가되게!, 
+    true일때 css 속성 45번라인 - 레드컬러단추에 rotate 효과 */}
+      <CircleButton onClick={onToggle} open={open}> 
         <MdAdd />
       </CircleButton>
     </>

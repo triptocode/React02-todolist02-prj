@@ -13,8 +13,8 @@ const TodoTemplateBlock = styled.div`
 
   margin-top: 96px;
   margin-bottom: 32px;
-  display: flex;
-  flex-direction: column;
+  display: flex; //   display: flex;는 block 처럼 자기자신들이 세로나열,크기지정가능 , display: inline-flex; 자기자신들 가로나열
+  flex-direction: column; // 자식요소가 세로로 나열됨 : <TodoHead/><TodoList/><TodoCreate/>
 `;
 
 function TodoTemplate({ children }) {
