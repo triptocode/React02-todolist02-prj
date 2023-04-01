@@ -41,9 +41,9 @@ const CircleButton = styled.button`
   align-items: center;
   justify-content: center;
 
-  transition: 0.125s all ease-in;
+  transition: 0.125s all ease-in; 
   ${props =>
-    props.open &&
+    props.open && //   props.open &&css`(open값이 true 일때만 적용하는 css구간, open초기값 false가 true가 되는건 반전을주는 toggle함수가 실행되는 버튼 클릭시)`
     css`
       background: #ff6b6b;
       &:hover {
